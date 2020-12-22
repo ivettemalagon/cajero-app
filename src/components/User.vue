@@ -1,10 +1,12 @@
 <template>
     <div id="User">
-        <h2>Hola <span> {{username}}, </span> ¡Bienvenido!</h2>
+        <h2>¡Bienvenido(a) de nuevo <br/> <span> {{username}}</span>!</h2>
+        
     </div>
 </template>
 
-<!--Validar si el usuario existe o no-->
+
+
 <script>
     export default {
         name: "User",
@@ -13,6 +15,7 @@
                 username: "none"
             }
         },
+
         created: function(){
             this.username = this.$route.params.username
         }
@@ -25,15 +28,28 @@
         height: 100%;
 
         display: flex;
+        position:relative;
+        justify-content: space-around;  
+        align-items: center;
+    }
+
+    #User h2{
+        color: #E5E7E9;
+        text-align: center;
+        font-family: "Roboto-Bold", Helvetica, Arial, serif;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
         justify-content: center;
         align-items: center;
     }
-    #User h2{
-        font-size: 50px;
-        color: #283747;
-    }
+
     #User span{
-        color: crimson;
-        font-weight: bold;
+        color: #E6B06B;
+        font-size: 55px;
+        font-style: normal;
+        font-weight: 700;
+        justify-content: center;
+        align-items: center;
     }
 </style>
