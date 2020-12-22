@@ -1,7 +1,9 @@
 import vueRouter from 'vue-router'
-
 import User from './components/User'
-import UserBalance from './components/UserBalance'
+import UserAuth from './components/UserAuth'
+import Inventory from './components/Inventory'
+import Search from './components/Search'
+import Modify from './components/Modify'
 import App from './App'
 
 const router = new vueRouter({
@@ -9,9 +11,9 @@ const router = new vueRouter({
     base: __dirname,
     routes: [
         {
-            path: '/',
-            name: "root",
-            component: App
+        path: '/',
+        name: "root",
+        component: App
         },
         {
             path: '/user/:username',
@@ -19,11 +21,25 @@ const router = new vueRouter({
             component: User
         },
         {
-            path: '/user/balance/:username',
-            name: "user_balance",
-            component: UserBalance
+            path: '/user/auth',
+            name: "user_auth",
+            component: UserAuth
+        },
+        {
+        path: '/inventory',
+        name: "inventory",
+        component: Inventory
+        },
+        {
+        path: '/inventory/product/',
+        name: "buscar",
+        component: Search
+        },
+        {
+        path: '/inventory/product/modify/',
+        name: "modificar",
+        component: Modify
         },
     ]
 })
-
 export default router
